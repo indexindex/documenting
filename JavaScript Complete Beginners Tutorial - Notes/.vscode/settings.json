@@ -1,0 +1,21 @@
+{
+    "liveServer.settings.port": 5501,
+    "workbench.colorCustomizations": {
+        "[SynthWave '84]": {
+            "titleBar.activeBackground": "#191919",
+            "titleBar.inactiveBackground": "#191919",
+            "tab.activeBackground": "#0D0A0B",
+            "tab.activeBorder": "#FF9D00",
+            "tab.inactiveBackground": "#191919",
+            "editor.background": "#191919",
+            "activityBar.background": "#191919",
+            "sideBar.background": "#0D0A0B",
+            "sideBarSectionHeader.background": "#454955",
+            "statusBar.background": "#191919",
+            "editorLineNumber.activeForeground": "#FF9D00"
+        },
+        "activityBar.background": "#2C1F6F",
+        "titleBar.activeBackground": "#3E2B9B",
+        "titleBar.activeForeground": "#FAF9FD"
+    }
+}
