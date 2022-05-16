@@ -1,69 +1,66 @@
-// --- --- --->
-// TODO: TASTE OF DOM
+// TODO: DOM
 
 // * document is the entry point that we use to access the DOM
 document
 
-// * selects first element with the id set to "name" (can be one)
-document.getElementById('name');
+// * SELECTING METHODS: BASIC SELECTING [
+    // * selects the first element with the id set to 'name'
+    // * method is meant for one target
+    document.getElementById('name');
 
-// * selects all tags (for now input) on the page (can be many)
-document.getElementsByTagName('input');
+    // * selects all specified tags on the page
+    // * method can have many targets
+    document.getElementsByTagName('input');
 
-// * selects all elements with the class set to "name" (can be many)
-document.getElementsByClassName('name');
+    // * selects all elements with the class set to 'name'
+    // * method can have many targets
+    document.getElementsByClassName('name');
 
-// * narrowing search example (selects all elements with class set to "name" within selected ul)
-const ul = document.getElementsByTagName('ul');
-ul.getElementsByClassName('name');
+    // * with querySelector we can search for everything
+    // !NB querySelector only gives back first match
+    // !NB querySelectorAll gives back all matches
+    // * id
+    document.querySelector('#name');
 
-// ! querySelector only gives back first match
-// ! querySelectorAll gives back all matches
-document.querySelector('h1');
+    // * tag
+    document.querySelector('h1');
 
-// * with querySelector we can search for everything
+    // * class
+    document.querySelector('.name');
+// * ]
 
-// * tag
-document.querySelector('h1');
+// * SELECTING METHODS: DEEP SELECTING [
+    // * selecting all elements with class set to 'name' within selected ul
+    // ? BASIC EXAMPLE
+    const ul = document.getElementsByTagName('ul');
+    ul.getElementsByClassName('name');
+// * ]
 
-// * id
-document.querySelector('#name');
+// * RETRIEVING DATA [
+    // * get text between tags with 'innerText'
+    // ? BASIC EXAMPLE
+    <h1>My Heading <strong style="display: none;">Primary</strong></h1>
+    const h1 = document.querySelector('h1');
+    h1.innerText; // * returns 'My Heading'
 
-// * class
-document.querySelector('.name');
+    // * get text between tags and preserve spaces with 'innerContent'
+    <h2>My Heading <strong style="display: none;">Secondary</strong></h2>
+    const h2 = document.querySelector('h2');
+    h2.textContent; // * returns 'My Heading Secondary'
 
-// --- --- --->
-// TODO: DOM ACCESS
+    // !NB difference between 'innerText' and 'textContent'
+    // * 'textContent' turns everything into text, also preserving spaces and indentation
+    // * while observing, 'textContent' gives exact content from HTML file while 'innerText' only returns text shown on webpage
 
-// ? innerText
-// * get text between tags
-// <h1 class="header">My Webpage</h1>
-const h1 = document.querySelector('h1');
-h1.innerText;
-// = "My Webpage"
+    // * get HTML back as a string with 'innerHTML'
+    <div class="html-content"><p>HTML</p></div>
+    const htmlContent = document.querySelector('.html-content');
+    htmlContent.innerHTML; // * returns '<p>HTML</p>'
 
-// ? innerContent
-// * get text between tags and preserve spaces
-// <h1 class="header">My Webpage</h1>
-const h1 = document.querySelector('h1');
-h1.textContent;
-// = "My Webpage"
+    // !NB 'innerHTML' is used to insert HTML content and DOM will render it accordingly
+// * ]
 
-// ! difference between innerText and textContent is that textContent turn everything into text and preserves spaces and indentation
-// ! textContent gives exact content from HTML file while innerText only returns text shown on webpage
 
-// ? innerHTML
-// * get HTML back as a string
-/*
-    <div class="html-content">
-        <p>HTML</p>
-    </div>
-*/
-const htmlContent = document.querySelector('.html-content');
-htmlContent.innerHTML;
-// = "<p>HTML</p>"
-
-// ! innerHTML is used to insert HTML content and DOM will render it accordingly
 
 // ? value
 // * get value from input
@@ -134,7 +131,7 @@ const newh2 = document.createElement('h2');
 // * adding inner text and class
 newh2.innerText = 'Agatha where are you?';
 newh2.classList.add('agatha');
-// return = <h2 class="agatha">Agatha where are you?</h2>
+// return = <h2 class='agatha'>Agatha where are you?</h2>
 
 const section = document.querySelector('section');
 // * appendChild will append inside section element (which is a parent), and will be placed as a last child
